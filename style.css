@@ -130,6 +130,7 @@ html {
   }
   
   .item {
+    margin: 10px;
     min-height: 200px;
     min-width: 200px;
     display: inline-flex;
