@@ -130,11 +130,14 @@
 
   function handleBookClick() {
     let moving = false
+    let mouseIsDown = true
     this.addEventListener("mousemove", () => moving = true)
     this.addEventListener("mouseup", () => {
       if(!this.classList.contains("viewed")) {
         this.classList.add("viewed")
-      } else if(!moving){
+        mouseIsDown = false
+        console.log("here")
+      } else if(!moving && !mouseIsDown) {
         alert("link to book page")
       }
     })
