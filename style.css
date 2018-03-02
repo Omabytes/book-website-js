@@ -13,7 +13,7 @@ html {
   }
   
   .site-wrap {
-    max-width: 700px;
+    max-width: auto;
     margin: 70px auto;
     background:white;
     padding:40px;
@@ -101,15 +101,18 @@ html {
   .items {
     height: 400px;
     width: 100%;
-    padding: 50px;
     display: flex;
     align-items: center;
     overflow: hidden;
     white-space: nowrap;
     user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
     cursor: pointer;
     transition: all 0.2s;
-    transform: scale(0.96);
+    transform: scale(0.99);
     will-change: transform;
     position: relative;
     background: rgba(255,255,255,0.5);
@@ -123,7 +126,7 @@ html {
     background: rgba(255,255,255,0);
     cursor: grabbing;
     cursor: -webkit-grabbing;
-    transform: scale(0.98);
+    transform: scale(1);
   }
   
   .item {

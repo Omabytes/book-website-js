@@ -84,27 +84,27 @@
 
 
   const everything = document.querySelector("body")
-  const slider = document.querySelector('.items');
-  const books = document.querySelectorAll(".item");
-  let isDown = false;
-  let startX;
-  let scrollLeft;
+  const slider = document.querySelector('.items')
+  const books = document.querySelectorAll(".item")
+  let isDown = false
+  let startX
+  let scrollLeft
 
   slider.addEventListener('mousedown', (e) => {
     isDown = true;
-    slider.classList.add('active');
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
+    slider.classList.add('active')
+    startX = e.pageX - slider.offsetLeft
+    scrollLeft = slider.scrollLeft
   });
 
   slider.addEventListener('mouseleave', () => {
     isDown = false;
-    slider.classList.remove('active');
+    slider.classList.remove('active')
   });
 
   slider.addEventListener('mouseup', () => {
     isDown = false;
-    slider.classList.remove('active');
+    slider.classList.remove('active')
     if (document.selection) {
       document.selection.empty()
     } else {
@@ -115,14 +115,9 @@
   slider.addEventListener('mousemove', (e) => {
     if (!isDown) return;  // stop the fn from running
     e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 3;
-    slider.scrollLeft = scrollLeft - walk;
-    if (document.selection) {
-      document.selection.empty()
-    } else {
-      window.getSelection().removeAllRanges()
-    }
+    const x = e.pageX - slider.offsetLeft
+    const walk = (x - startX) * 2
+    slider.scrollLeft = scrollLeft - walk
   });
 
   function handleBookHover() {
@@ -134,9 +129,16 @@
   }
 
   function handleBookClick() {
-    if(!this.classList.contains("viewed")) {
-      this.classList.add("viewed");
-    }
+    let moving = false
+    this.addEventListener("mousemove", () => moving = true)
+    this.addEventListener("mouseup", () => {
+      if(!this.classList.contains("viewed")) {
+        this.classList.add("viewed")
+      } else if(!moving){
+        alert("link to book page")
+      }
+    })
+    
   }
 
   document.addEventListener("mousedown", function(e) {
@@ -150,7 +152,7 @@
   })
   books.forEach(book => book.addEventListener("mouseover", handleBookHover))
   books.forEach(book => book.addEventListener("mouseleave", handleBookUnhover))
-  books.forEach(book => book.addEventListener("click", handleBookClick))
+  books.forEach(book => book.addEventListener("mousedown", handleBookClick))
 </script>
 
 </body>
