@@ -13,7 +13,7 @@
 
   <nav id="main">
     <ul>
-      <li class="logo"><a href="#"><img style="width:50px" src="https://www.svgrepo.com/show/175749/double-up-arrow.svg"></a></li>
+      <li class="logo"><img onclick="smoothScroll(document.getElementsByTagName('header')[0].offsetTop, 300)" style="width:50px" src="https://www.svgrepo.com/show/175749/double-up-arrow.svg"></li>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="publications.html">Publications</a></li>
@@ -113,13 +113,12 @@
     slider.scrollLeft = scrollLeft - walk
   });
 
-  function smoothScroll(elem,time) {
-      if( !elem) return;
-      var to = elem.offsetTop + 40;
+  function smoothScroll(offsetY,time) {
+      if( !offsetY) return;
+      var to = offsetY;
       var from = window.scrollY;
       var start = new Date().getTime(),
           timer = setInterval(function() {
-              console.count("scrolling")
               var step = Math.min(1,(new Date().getTime()-start)/time);
               window.scrollTo(0,(from+step*(to-from))+1);
               if( step == 1){ clearInterval(timer);};
@@ -143,7 +142,8 @@
     let mouseUpEventRemove
     const mouseUpEvent = () => {
       if(!this.classList.contains("viewed")) {
-        smoothScroll(this.parentNode.parentNode, 300)
+        console.log(this.height)
+        smoothScroll(this.parentNode.parentNode.offsetTop + this.offsetHeight / 2, 300)
         this.classList.add("viewed")
       } else if(!moving) {
         alert("link to book page")
