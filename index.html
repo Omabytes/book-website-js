@@ -134,7 +134,8 @@
     this.classList.remove("hovered")
   }
 
-  function handleBookClick() {
+  function handleBookClick(e) {
+    if(e.which !== 1) return
     let moving = false
     this.addEventListener("mousemove", () => {
       moving = true
@@ -142,8 +143,7 @@
     let mouseUpEventRemove
     const mouseUpEvent = () => {
       if(!this.classList.contains("viewed")) {
-        console.log(this.height)
-        smoothScroll(this.parentNode.parentNode.offsetTop + this.offsetHeight / 2, 300)
+        // smoothScroll(this.parentNode.parentNode.offsetTop + (this.offsetHeight / 2), 300) //this solution doesn't work
         this.classList.add("viewed")
       } else if(!moving) {
         alert("link to book page")
@@ -155,6 +155,7 @@
   }
 
   document.addEventListener("mousedown", function(e) {
+    if(e.which !== 1) return
     let element = document.querySelector(".item.viewed")
     if(element !== null) {
       let isClickInside = element.contains(e.target)
