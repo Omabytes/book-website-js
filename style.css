@@ -101,7 +101,7 @@ html {
   }
   
   .items {
-    height: 90vh;
+    height: 90vmin;
     width: auto;
     display: flex;
     align-items: center;
@@ -118,7 +118,7 @@ html {
     will-change: transform;
     position: relative;
     background: rgba(255,255,255,0.2);
-    perspective: 500px;
+    perspective: 800px;
     border-left: 2px solid black;
     border-right: 2px solid black;
   }
@@ -132,16 +132,16 @@ html {
 
   .buffer {
     margin: 10px;
-    min-height: 200px;
-    min-width: 200px;
+    min-height: 40vmin;
+    min-width: 40vmin;
     display: inline-flex;
     color: transparent;
   }
   
   .item {
     margin: 10px;
-    min-height: 40%;
-    min-width: 20%;
+    min-height: 40vmin;
+    min-width: 40vmin;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -153,24 +153,24 @@ html {
   }
   
   .item:nth-child(even).viewed {
-    min-height: 80%;
-    min-width: 40%;
+    min-height: 80vmin;
+    min-width: 80vmin;
     z-index: 2;
     transform: rotateY(0);
     transition: all 1s;
   }
   
   .item:nth-child(odd).viewed {
-    min-height: 80%;
-    min-width: 40%;
+    min-height: 80vmin;
+    min-width: 80vmin;
     z-index: 3;
     transform: rotateY(0);
     transition: all 1s;
   }
   
   .item.hovered {
-    min-height: 44%;
-    min-width: 22%;
+    min-height: 44vmin;
+    min-width: 44vmin;
     z-index: 2;
     transition: all 0.3s;
   }
