@@ -130,18 +130,20 @@
 
   function handleBookClick() {
     let moving = false
-    let mouseIsDown = true
-    this.addEventListener("mousemove", () => moving = true)
-    this.addEventListener("mouseup", () => {
+    this.addEventListener("mousemove", () => {
+      moving = true
+    })
+    let mouseUpEventRemove
+    const mouseUpEvent = () => {
       if(!this.classList.contains("viewed")) {
         this.classList.add("viewed")
-        mouseIsDown = false
-        console.log("here")
-      } else if(!moving && !mouseIsDown) {
+      } else if(!moving) {
         alert("link to book page")
       }
-    })
-    
+      mouseUpEventRemove()
+    }
+    mouseUpEventRemove = () => this.removeEventListener("mouseup", mouseUpEvent)
+    this.addEventListener("mouseup",mouseUpEvent)
   }
 
   document.addEventListener("mousedown", function(e) {
