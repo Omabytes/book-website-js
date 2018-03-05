@@ -78,6 +78,7 @@ html {
     white-space: nowrap;
     background: white;
     transition: all .5s;
+    cursor: pointer;
   }
   
   .fixed-nav li.logo {
@@ -116,15 +117,14 @@ html {
     transform: scale(0.99);
     will-change: transform;
     position: relative;
-    background: rgba(255,255,255,0.5);
-    font-size: 0;
+    background: rgba(255,255,255,0.2);
     perspective: 500px;
     border-left: 2px solid black;
     border-right: 2px solid black;
   }
   
   .items.active {
-    background: rgba(255,255,255,0);
+    background: rgba(255,255,255,0.3);
     cursor: grabbing;
     cursor: -webkit-grabbing;
     transform: scale(1);
