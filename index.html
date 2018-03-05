@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Omabytes Website</title>
+  <title>Omabytes Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,10 +14,10 @@
   <nav id="main">
     <ul>
       <li class="logo"><a href="#"><img style="width:50px" src="https://www.svgrepo.com/show/175749/double-up-arrow.svg"></a></li>
-      <li><a href="#">Home</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/publications">Publications</a></li>
-      <li><a href="/contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
@@ -113,6 +113,20 @@
     slider.scrollLeft = scrollLeft - walk
   });
 
+  function smoothScroll(elem,time) {
+      if( !elem) return;
+      var to = elem.offsetTop + 40;
+      var from = window.scrollY;
+      var start = new Date().getTime(),
+          timer = setInterval(function() {
+              console.count("scrolling")
+              var step = Math.min(1,(new Date().getTime()-start)/time);
+              window.scrollTo(0,(from+step*(to-from))+1);
+              if( step == 1){ clearInterval(timer);};
+          },1);
+          window.scrollTo(0,(from+1));
+      }
+
   function handleBookHover() {
     if(!this.classList.contains("viewed")) this.classList.add("hovered")
   }
@@ -129,6 +143,7 @@
     let mouseUpEventRemove
     const mouseUpEvent = () => {
       if(!this.classList.contains("viewed")) {
+        smoothScroll(this.parentNode.parentNode, 200)
         this.classList.add("viewed")
       } else if(!moving) {
         alert("link to book page")
