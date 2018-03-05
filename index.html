@@ -143,7 +143,7 @@
     let mouseUpEventRemove
     const mouseUpEvent = () => {
       if(!this.classList.contains("viewed")) {
-        smoothScroll(this.parentNode.parentNode, 200)
+        smoothScroll(this.parentNode.parentNode, 300)
         this.classList.add("viewed")
       } else if(!moving) {
         alert("link to book page")
