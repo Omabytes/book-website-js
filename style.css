@@ -5,6 +5,11 @@ html {
     font-size: 20px;
     font-weight: 200;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
   }
   body {
     margin: 0;
@@ -42,6 +47,14 @@ html {
     color:white;
     font-size: 7vw;
     text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+  }
+
+  p {
+    user-select: text;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -khtml-user-select: text;
+    -ms-user-select: text;
   }
   
   nav {
@@ -101,6 +114,14 @@ html {
     text-transform: uppercase;
   }
   
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+
+  ::-moz-scrollbar {
+    width: 0;
+  }
+
   .items {
     height: 90vmin;
     width: auto;
@@ -109,11 +130,6 @@ html {
     overflow-x: scroll;
     overflow-y: hidden;
     white-space: nowrap;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -ms-user-select: none;
     cursor: pointer;
     transition: all 0.2s;
     transform: scale(0.99);
@@ -159,7 +175,7 @@ html {
     min-width: 80vmin;
     z-index: 2;
     transform: rotateY(0);
-    transition: all 1s;
+    transition: all 0.5s;
   }
   
   .item:nth-child(odd).viewed {
@@ -167,7 +183,7 @@ html {
     min-width: 80vmin;
     z-index: 3;
     transform: rotateY(0);
-    transition: all 1s;
+    transition: all 0.5s;
   }
   
   .item.hovered {
