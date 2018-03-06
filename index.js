@@ -13,7 +13,6 @@ function fixNav() {
 
 window.addEventListener("scroll", fixNav)
 
-
 const everything = document.querySelector("body")
 const slider = document.querySelector('.items')
 const books = document.querySelectorAll(".item")
