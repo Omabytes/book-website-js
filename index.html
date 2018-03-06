@@ -144,7 +144,6 @@
     let scrollToBookRemove
     const mouseUpEvent = () => {
       if(!this.classList.contains("viewed")) {
-        // smoothScroll(this.parentNode.parentNode.offsetTop + (this.offsetHeight / 2), 300) //this solution doesn't work
         this.classList.add("viewed")
         this.addEventListener("transitionend", scrollToBook)
       } else if(!moving) {
