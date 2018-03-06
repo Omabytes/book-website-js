@@ -105,7 +105,8 @@ html {
     width: auto;
     display: flex;
     align-items: center;
-    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
     white-space: nowrap;
     user-select: none;
     -webkit-user-select: none;
