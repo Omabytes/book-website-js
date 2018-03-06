@@ -45,3 +45,4 @@ function handleBookHover() {
   books.forEach(book => book.addEventListener("mouseover", handleBookHover))
   books.forEach(book => book.addEventListener("mouseleave", handleBookUnhover))
   books.forEach(book => book.addEventListener("mousedown", handleBookClick))
+  
