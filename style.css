@@ -35,11 +35,11 @@ html {
   }
   
   header {
-    text-align: center;
-    height:50vh;
+    height:50vmin;
     background:url(http://wes.io/iEgP/wow-so-deep.jpg) bottom center no-repeat;
     background-size:cover;
     display:flex;
+    text-align: center;
     align-items:center;
     justify-content: center;
   }
