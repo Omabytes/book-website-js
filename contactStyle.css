@@ -1,0 +1,11 @@
+header {
+    align-content: center;
+    justify-content: left;
+    position: relative;
+}
+
+h1 {
+    font-size: 5vw;
+    position: absolute;
+    bottom: 0;
+}
