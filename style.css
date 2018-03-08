@@ -10,7 +10,9 @@ html {
     -moz-user-select: none;
     -khtml-user-select: none;
     -ms-user-select: none;
+    overflow-x: hidden;
   }
+
   body {
     margin: 0;
   }
@@ -35,7 +37,7 @@ html {
   }
   
   header {
-    height:50vmin;
+    height:100vh;
     background:url(http://wes.io/iEgP/wow-so-deep.jpg) bottom center no-repeat;
     background-size:cover;
     display:flex;
@@ -45,9 +47,9 @@ html {
   }
   
   h1 {
-    color:white;
+    color: rgba(255, 255, 255, 0.9);
+    mix-blend-mode: exclusion;
     font-size: 7vw;
-    text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
   }
 
   p {
