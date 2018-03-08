@@ -1,0 +1,13 @@
+html {
+    overflow: hidden;
+}
+
+header {
+    height: 100vh;
+}
+
+nav {
+    position: sticky;
+    bottom: 0;
+    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
+}

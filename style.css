@@ -37,7 +37,7 @@ html {
   }
   
   header {
-    height:100vh;
+    height:40vh;
     background:url(http://wes.io/iEgP/wow-so-deep.jpg) bottom center no-repeat;
     background-size:cover;
     display:flex;
@@ -50,6 +50,7 @@ html {
     color: rgba(255, 255, 255, 0.9);
     mix-blend-mode: exclusion;
     font-size: 7vw;
+    z-index: 4;
   }
 
   p {
