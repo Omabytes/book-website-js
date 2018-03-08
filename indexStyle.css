@@ -1,4 +1,6 @@
-html {
+html, body {
+    margin: 0;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -9,5 +11,4 @@ header {
 nav {
     position: sticky;
     bottom: 0;
-    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
 }
