@@ -11,32 +11,3 @@ h1 {
     position: absolute;
     bottom: 0;
 }
-
-.items {
-    height: 24vmin;
-}
-
-.buffer {
-    min-height: 17vmin;
-    min-width: 17vmin;
-}
-
-.item {
-    min-height: 17vmin;
-    min-width: 17vmin;
-}
-
-.item.hovered {
-    min-height: 19vmin;
-    min-width: 19vmin;
-}
-
-.item:nth-child(even).viewed {
-    min-height: 23vmin;
-    min-width: 23vmin;
-}
-
-.item:nth-child(odd).viewed {
-    min-height: 23vmin;
-    min-width: 23vmin;
-}
